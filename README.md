@@ -1,2 +1,2 @@
 # Python_Projects
-This reposrity contains the  fully tested code of various python projects created in learning process
+This repository contains the fully tested various **python projects** created during learning process.
