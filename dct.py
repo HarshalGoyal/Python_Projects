@@ -1,3 +1,4 @@
+#this is the code for taking voice input from user and searching that on wiki and responding with the summary from wiki
 import wikipedia
 import pyttsx3
 import speech_recognition as sr
