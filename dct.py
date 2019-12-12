@@ -5,7 +5,7 @@ import speech_recognition as sr
 
 invalid_input = True
 
-while invalid_input
+while invalid_input == True :
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening")
