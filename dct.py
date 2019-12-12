@@ -3,31 +3,33 @@ import wikipedia
 import pyttsx3
 import speech_recognition as sr
 
+invalid_input = True
 
-r = sr.Recognizer()
-with sr.Microphone() as source:
-    print("Listening")
-    r.pause_threshold = 2
-    audio = r.listen(source)
+while invalid_input
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening")
+        r.pause_threshold = 2
+        audio = r.listen(source)
 
-    try:
-        print("Recognising")
-        qurey = r.recognize_google(audio, language='en-in')
-        print(f"user input:{qurey}\n ")
-        wikipedia.search(r.recognize_google(audio, language='en-in'))
+        try:
+            print("Recognising")
+            qurey = r.recognize_google(audio, language='en-in')
+            print(f"user input:{qurey}\n ")
+            wikipedia.search(r.recognize_google(audio, language='en-in'))
 
-        engine = pyttsx3.init()
+            engine = pyttsx3.init()
 
-        res=wikipedia.summary(r.recognize_google(audio, language='en-in'))
+            res=wikipedia.summary(r.recognize_google(audio, language='en-in'))
+            invalid_input=False
+            print("According to wikipedia : %s"%res)
 
-        print("According to wikipedia : %s"%res)
+            engine.say(res)
+            engine.runAndWait()
 
-        engine.say(res)
-        engine.runAndWait()
-
-    except Exception as e:
-
-        print("please re Run the program")
+        except Exception as e:
+            invalid_input=True
+            #print("please re Run the program")
         
 
 
