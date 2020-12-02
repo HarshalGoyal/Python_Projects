@@ -14,6 +14,7 @@ while invalid_input :
 
         try:
             print("Recognising")
+            
             qurey = r.recognize_google(audio, language='en-in')
             print(f"user input:{qurey}\n ")
             wikipedia.search(r.recognize_google(audio, language='en-in'))
